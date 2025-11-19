@@ -15,16 +15,33 @@
       overflow-x: hidden;
     }
 
-    /* Fade-in Animation */
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Fade-In */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Soft Glow */
+    @keyframes softGlow {
+      0% { text-shadow: 0 0 4px #00eaff; }
+      100% { text-shadow: 0 0 12px #00eaff; }
     }
 
-    /* Glow Animation */
-    @keyframes glowText {
-      0%, 100% { text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff; }
-      50% { text-shadow: 0 0 20px #ff00c8, 0 0 30px #ff00c8; }
+    /* Floating shapes */
+    .float-shape {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #00c8ff22;
+      backdrop-filter: blur(3px);
+      animation: float 6s infinite ease-in-out alternate;
+      z-index: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-30px); }
     }
 
     /* Navbar */
@@ -37,137 +54,123 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeIn 0.8s ease-in-out;
     }
 
-    nav h2 {
-      font-size: 28px;
-      font-weight: 700;
-      animation: glowText 3s infinite;
-    }
-
+    nav h2 { font-size: 28px; font-weight: 700; animation: softGlow 2s infinite alternate; }
     nav a {
       margin-left: 25px;
       text-decoration: none;
       font-size: 18px;
       color: #fff;
       transition: 0.3s;
+      opacity: 0.85;
     }
+    nav a:hover { color: #00c8ff; opacity: 1; }
 
-    nav a:hover {
-      color: #00c8ff;
-      transform: scale(1.1);
-    }
-
-    /* Hero Section */
+    /* Hero */
     .hero {
       text-align: center;
-      padding: 120px 20px;
-      background: radial-gradient(circle at top, #242424, #111);
-      animation: fadeIn 1.2s ease-in-out;
+      padding: 150px 20px;
+      background: linear-gradient(135deg, #1a1a1a, #191919);
+      position: relative;
     }
-
     .hero h1 {
       font-size: 55px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       background: linear-gradient(to right, #00eaff, #ff00c8);
       -webkit-background-clip: text;
       color: transparent;
-      animation: glowText 3s infinite;
+      animation: softGlow 3s infinite alternate;
     }
+    .typing { color: #00eaff; font-size: 28px; margin-top: 5px; }
 
-    .hero p {
-      font-size: 22px;
-      opacity: 0.8;
-      animation: fadeIn 2s ease-in-out;
+    .cta-btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00c8ff;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+      color: #000;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
     }
+    .cta-btn:hover { transform: scale(1.05); background: #00a6cc; }
+
+    /* Social icons */
+    .socials { margin-top: 25px; display: flex; justify-content: center; gap: 25px; }
+    .socials a { font-size: 26px; color: #00eaff; transition: 0.3s; }
+    .socials a:hover { transform: scale(1.2); color: #ff00c8; }
 
     /* Sections */
-    .section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-      animation: fadeIn 1.5s ease-in-out;
-    }
+    .section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    .section h2 { font-size: 36px; margin-bottom: 20px; border-left: 6px solid #00c8ff; padding-left: 12px; }
 
-    .section h2 {
-      font-size: 38px;
-      margin-bottom: 20px;
-      border-left: 6px solid #00c8ff;
-      padding-left: 12px;
-      animation: glowText 5s infinite;
-    }
-
-    /* Card */
     .card {
       background: #1a1a1a;
       padding: 25px;
       margin-bottom: 25px;
       border-radius: 15px;
-      border: 1px solid #333;
-      transition: 0.3s;
-      animation: fadeIn 2s ease-in-out;
+      border: 1px solid #2b2b2b;
+      transition: 0.3s ease;
     }
-
     .card:hover {
-      transform: translateY(-8px) scale(1.02);
+      transform: translateY(-5px);
+      box-shadow: 0 0 18px #00c8ff33;
       border-color: #00c8ff;
-      box-shadow: 0 0 20px #00c8ff55;
     }
 
-    .skills-list li {
-      margin-bottom: 8px;
-      font-size: 18px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    /* Contact Form */
     input, textarea {
       width: 100%;
       padding: 12px;
       margin-top: 10px;
+      background: #111;
       border-radius: 10px;
       border: none;
-      background: #111;
-      color: white;
-      font-size: 16px;
-      animation: fadeIn 2s ease-in-out;
+      color: #fff;
     }
 
-    input:focus, textarea:focus {
-      outline: 2px solid #00c8ff;
-    }
+    button { padding: 12px 25px; background: #00c8ff; border-radius: 10px; border: none; }
 
-    button {
-      padding: 12px 24px;
-      margin-top: 15px;
-      background: linear-gradient(45deg, #00eaff, #ff00c8);
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 600;
-      transition: 0.3s;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      filter: brightness(1.2);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      margin-top: 40px;
-      font-size: 16px;
-      opacity: 0.7;
-      animation: fadeIn 2s ease-in-out;
-    }
+    footer { text-align: center; padding: 20px; background: #111; opacity: 0.75; margin-top: 40px; }
   </style>
+  <script>
+    // Typing Animation
+    document.addEventListener('DOMContentLoaded', function () {
+      const texts = ["Developer", "Programmer", "Student", "Tech Enthusiast"]; // words
+      let count = 0;
+      let idx = 0;
+      let currentText = "";
+      let letter = "";
+
+      function type() {
+        if (count === texts.length) count = 0;
+        currentText = texts[count];
+        letter = currentText.slice(0, ++idx);
+        document.querySelector(".typing").textContent = letter;
+        if (letter.length === currentText.length) {
+          setTimeout(() => {
+            idx = 0;
+            count++;
+          }, 1200);
+        }
+        setTimeout(type, 130);
+      }
+      type();
+    });
+
+    // Scroll Reveal Animation
+    const reveals = () => {
+      const elements = document.querySelectorAll('.reveal');
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) el.classList.add('active');
+      });
+    };
+    window.addEventListener('scroll', reveals);
+  </script>
 </head>
 <body>
 
