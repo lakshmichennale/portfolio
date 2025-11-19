@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakshmi Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #0f0f0f; color: #fff; }
+
+    /* Navbar */
+    nav { display: flex; justify-content: space-between; padding: 20px 40px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 10; }
+    nav h2 { font-size: 28px; font-weight: 700; }
+    nav a { margin-left: 25px; text-decoration: none; font-size: 18px; color: #fff; transition: 0.3s; }
+    nav a:hover { color: #00c8ff; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 120px 20px; background: linear-gradient(135deg, #1a1a1a, #232323); }
+    .hero h1 { font-size: 55px; margin-bottom: 15px; background: linear-gradient(to right, #00eaff, #ff00c8); -webkit-background-clip: text; color: transparent; }
+    .hero p { font-size: 22px; opacity: 0.8; }
+
+    /* Sections */
+    .section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    .section h2 { font-size: 38px; margin-bottom: 20px; border-left: 6px solid #00c8ff; padding-left: 12px; }
+
+    /* Card */
+    .card { background: #1a1a1a; padding: 25px; margin-bottom: 25px; border-radius: 15px; border: 1px solid #333; transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); border-color: #00c8ff; }
+
+    .skills-list li { margin-bottom: 8px; font-size: 18px; }
+
+    /* Contact Form */
+    input, textarea { width: 100%; padding: 12px; margin-top: 10px; border-radius: 10px; border: none; background: #111; color: white; font-size: 16px; }
+    input:focus, textarea:focus { outline: 2px solid #00c8ff; }
+    button { padding: 12px 24px; margin-top: 15px; background: #00c8ff; color: #000; border: none; border-radius: 10px; cursor: pointer; font-size: 18px; font-weight: 600; transition: 0.3s; }
+    button:hover { background: #00a9d1; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #111; margin-top: 40px; font-size: 16px; opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h2>Lakshmi</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Hi, I'm Lakshmi 👋</h1>
+    <p>A passionate engineering student learning C, C++, Java, and Web Development.</p>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I am studying Engineering at Sairam College of Engineering. I love coding, solving problems, and creating new projects in C, C++, Python, and HTML/CSS.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="card">
+      <ul class="skills-list">
+        <li>C Programming</li>
+        <li>C++ Programming</li>
+        <li>Python</li>
+        <li>HTML & CSS</li>
+        <li>Basic JavaScript</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>A simple personal portfolio built using only HTML and CSS.</p>
+    </div>
+    <div class="card">
+      <h3>C++ Problem Solver</h3>
+      <p>A collection of C++ programs solving DSA questions.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="card">
+      <form>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Lakshmi | Portfolio
+  </footer>
+
+</body>
+</html>
